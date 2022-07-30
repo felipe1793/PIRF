@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap');
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    min-width: 1280px;
+}
+
+header {
+    width: 100%;
+    height: 108px;
+    background-color: rgb(19, 11, 99);
+}
+
+.nav {
+    display: flex;
+    margin: auto;
+    padding-right: 131px;
+    align-items: center;
+    width: 1280px;
+    color: white;
+    justify-content: space-between;
+}
+
+.nav a {
+    text-decoration: none;
+    color:white;
+}
+
+.search {
+    position: relative;
+    width: 516px;
+    margin-right: 130px;
+}
+
+.button {
+    color: rgb(19, 11, 99);
+    background: white;
+    width: 55px;
+    height: 36px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border: hidden;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.button i {
+    font-size: 20px;
+}
+
+.button:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+
+.logo {
+    flex-grow: 0;
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.sports {
+    padding-right: 91px;
+}
+
+.buscar {
+    width: 516px;
+    height: 40px;
+    border-radius: 22px;
+    margin-right: 184px;
+}
+
+.usuario {
+    display: contents;
+
+}
+
+.usuario i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.usuario p {
+    margin: 0;
+    margin-right: 1px;
+}
+
+/* main */
+
+main {
+    width: 1280px;
+    margin: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 55px;
+    padding-inline: 250px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(19, 11, 99);
+}
+
+.grupo1 {}
+
+.produtos {
+    line-height: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.produtos div {
+    margin-top: 65px;
+    margin-bottom: 100px;
+    border: solid;
+    border-width: thin;
+    border-color: lightgray;
+    border-style: outset;
+    padding-bottom: 12px;
+}
+
+img {
+    width: 150px;
+}
+
+.descricao {
+    background: lightgray;
+}
+
+#camisa {
+    color: black;
+    font-size: 12px;
+    padding-top: 12px;
+    margin-left: 4px;
+}
+
+#preco {
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    position: relative;
+    bottom: -5px;
+    margin-left: 4px;
+}
+
+/* footer */
+
+footer {
+    height: 200px;
+    width: 100%;
+    background-color: rgb(19, 11, 99);
+    color: white;
+}
+
+.footersection {
+    width: 1280px;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+h2 {
+    margin-bottom: 20px;
+
+}
+
+.central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.central h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.central div {
+
+    width: 208px;
+    border-radius: 50px;
+    height: 64px;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.central div a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.central div a:hover {
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+    line-height: 1.5;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+ul li a:hover {
+    color: gray;
+}
+
+.institucional {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.ajuda {
+    margin-top: -28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap');
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    min-width: 1280px;
+}
+
+
+
+/* footer */
+
+footer {
+    height: 200px;
+    width: 100%;
+    background-color: rgb(19, 11, 99);
+    color: white;
+}
+
+.footersection {
+    width: 1280px;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+h2 {
+    margin-bottom: 20px;
+
+}
+
+.central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.central h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.central div {
+
+    width: 208px;
+    border-radius: 50px;
+    height: 64px;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.central div a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.central div a:hover {
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+    line-height: 1.5;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+ul li a:hover {
+    color: gray;
+}
+
+.institucional {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.ajuda {
+    margin-top: -28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

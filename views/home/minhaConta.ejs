@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/minhaConta.css">
+    <title>trabalheConosco</title>
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+        <main>
+            <section class="nav">
+                <form action="">
+                    <div class="container">
+                        <br>
+                        <br>
+                        <h1>Dados do último pedido</h1>
+                        <br>
+                        <br>
+                        <a href="" class="btn btn-primary mb-2"><b>Minha Conta</b></a>
+                        <br>
+                        <br>
+                        <a href="" class="btn btn-primary mb-2">Pedidos</a>
+                        <br>
+                        <br>
+                        <a href="" class="btn btn-primary mb-2">Trocas</a>
+                        <br>
+                        <br>
+                        <a href="" class="btn btn-primary mb-2">Seus Dados</a>
+                        <br>
+                        <br>
+                        <a href="" class="btn btn-primary mb-2">Endereços</a>
+                        <br>
+                        <br>
+                        <a href="" class="btn btn-primary mb-2">Cartões Salvos</a>
+                        <br>
+                        <br>
+                        <button type="submit" class=""><a href="button">Sair</a></button>
+                        <br>
+                    </div>
+                </form>
+
+
+                <h3>Dados Pessoais</h3>
+
+                <form action="">
+                    <div class="mb-3">
+                        <label for="nome">*Nome Completo:</label>
+                        <br>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                        <br>
+                        <br>
+                        <label for="email">E-mail:</label>
+                        <br>
+                        <input type="email" id="email" nome="email" placeholder="email@me.com" required>
+                        <br>
+                        <br>
+                        <label for="nome">*CPF:</label>
+                        <br>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu CPF" required>
+                        <br>
+                        <br>
+                    </div>
+                </form>
+
+
+
+                <form action="">
+                    <div class="mb-3">
+                        <label for="data">*Data Nascimento:</label>
+                        <br>
+                        <input type="date" id="data" name="data">
+                        <br>
+                        <br>
+                        <label for="phone">Telefone Fixo ou Comercial:</label>
+                        <br>
+                        <input type="tel" id="phone" name="phone" placeholder="Digite seu Telefone">
+                        <br>
+                        <br>
+                        <label for="phone">Telefone Celular:</label>
+                        <br>
+                        <input type="tel" id="phone" name="phone" placeholder="Digite seu Telefone">
+                        <br>
+                        <br>
+                        <button type="submit" class=""><a href="button">Editar meus dados</a></button>
+                    </div>
+                </form>
+            </section>
+
+            <br>
+            <br>
+            </form>
+            </div>
+            </section>
+
+        </main>
+
+        <%- include('../partials/footer') %>
+
+</body>
+
+</html>
