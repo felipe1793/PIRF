@@ -5,54 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <title>Página Login</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="css/loginv2.css">
+    <title>Login</title>
 </head>
 
 <body>
     
     <%- include('../partials/header') %>
     
-    <main>
+    <main class="tamanho-login">
 
-        <!-- Passo para quando usuário já possui cadastro -->
         <section class="container">
-            <div class="formulario1">
-                <p class="login">Login</p>
+            <div class="formulario">
+                <p class="login">Login:</p>
                 
                 <form action="">
                     <label for="email">E-mail:</label>
-                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
-                    
+                    <input type="email" class="tamanho-place" name="email" id="email" placeholder="Digite seu e-mail">
+                    <br>
                     <label for="password">Senha:</label>
-                    <input type="password" name="password" id="password" placeholder="Digite sua senha">
-                    
+                    <input type="password" class="tamanho-place" name="password" id="password" placeholder="Digite sua senha">
+                    <br>
                     <input class="submit" type="submit" value="Acessar Conta">
                     
                 </form>
 
+                <a  id="senha" href="http://localhost:3000/cadastro">Cria conta</a>
+                <br>
                 <a  id="senha" href="esquecisenha.html">Esqueci minha senha</a>
                 
             </div>
 
-        <!-- Para criar conta nova -->
-            
-            <div class="formulario2">    
-                <form action="">
-                    <p class="criarConta">Criar Conta</p>
-                    <label for="email">Informe seu e-mail</label>
-                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
-                    <input class="submit" type="submit" value="Prosseguir">
-                </form>
-            </div>
         </section>
-        <div class="contato">
-
-            <p class="redesSociais">Acesse sua conta K2 através de suas redes sociais.</p>
-            <img src="img/login/instagram-ar21.svg" alt="logo instagram">
-            <img src="img/login/FB.png" alt="logo facebook">
-            <img src="img/login/Twitter Logo.png" alt="logo twitter">
-        </div>
     </main>
 
     <%- include('../partials/footer') %>

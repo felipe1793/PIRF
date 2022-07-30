@@ -1,28 +1,32 @@
+const user = {
+    nome: null
+}
+
 const homeController = {
     index: (req, res) => {
-        res.render("home/")
+        res.render("home/", {user})
     },
     cadastro: (req, res) => {
-        res.render("home/cadastro")
+        res.render("home/cadastro", {user})
     },
     carrinho: (req, res) => {
-        res.render("home/carrinho")
+        res.render("home/carrinho", {user})
     },
 
     login: (req, res) => {
-        res.render("home/login")
+        res.render("home/login", {user})
     },
     minhaConta: (req, res) => {
-        res.render("home/minhaConta")
+        res.render("home/minhaConta", {user})
     },
     politica: (req, res) => {
-        res.render("home/politica")
+        res.render("home/politica", {user})
     },
     sobre: (req, res) => {
-        res.render("home/sobre")
+        res.render("home/sobre" , {user})
     },
     trabalheConosco: (req, res) => {
-        res.render("home/trabalheConosco")
+        res.render("home/trabalheConosco", {user})
     }
 }
 

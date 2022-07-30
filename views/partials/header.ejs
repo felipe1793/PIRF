@@ -6,10 +6,16 @@
             <input type type="text" id="buscar" name="buscar" class="buscar" placeholder="O que você procura?">
             <button class='button' id="button"><i class="fa fa-search"></i></button>
         </div>
-        <div class="usuario">
-            <i class="fa fa-user"></i>
-            <p>Olá, Usuário</p>
-            <p>&or;</p>
-        </div>
+        <% if (user.nome == null || user.nome == undefined) { %> 
+            <div class="usuario">
+                <i class="fa fa-user"></i>
+                <p>Login</p>
+            </div>
+            <% } else { %> 
+            <div class="usuario">
+                <i class="fa fa-user"></i>
+                <p>Olá, <%= user.nome  %> </p>
+            </div>
+        <% } %> 
     </nav>
 </header>
