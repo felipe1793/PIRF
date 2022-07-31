@@ -18,7 +18,6 @@ const homeController = {
     },
     logged: (req, res) => {
         let {email, password} = req.body
-        console.log(password)
         res.redirect("/index")
     },
     minhaConta: (req, res) => {
