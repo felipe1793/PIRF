@@ -2,6 +2,8 @@ const user = {
     nome: null
 }
 
+const { Produto }= require('../models')
+
 const homeController = {
     index: (req, res) => {
         res.render("home/", {user})
@@ -31,6 +33,12 @@ const homeController = {
     },
     trabalheConosco: (req, res) => {
         res.render("home/trabalheConosco", {user})
+    },
+    teste: async (req, res) => {
+        let produtos = await Produto.findAll()
+        console.log(produtos)
+        res.send("oi")
+
     }
 }
 

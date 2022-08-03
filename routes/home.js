@@ -11,6 +11,7 @@ router.get('/minhaConta', homeController.minhaConta);
 router.get('/politica', homeController.politica);
 router.get('/sobre', homeController.sobre);
 router.get('/trabalheConosco', homeController.trabalheConosco);
+router.get('/teste', homeController.teste);
 
 
 
