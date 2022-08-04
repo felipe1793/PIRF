@@ -35,7 +35,7 @@ const homeController = {
         res.render("home/trabalheConosco", {user})
     },
     teste: async (req, res) => {
-        let produtos = await Produto.findAll()
+        const produtos = await Produto.findAll()
         console.log(produtos)
         res.send("oi")
 

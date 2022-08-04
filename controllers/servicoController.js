@@ -1,4 +1,4 @@
-const Servico = require('../models/servicos');
+const Servico = require('./servicos');
 const storage = require('../config/storage');
 const fs = require('fs');
 const path = require('path');
