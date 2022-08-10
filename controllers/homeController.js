@@ -2,7 +2,7 @@ const user = {
     nome: null
 }
 
-const { Produto }= require('../models')
+const { Produto } = require('../models')
 
 const homeController = {
     index: (req, res) => {
@@ -36,6 +36,10 @@ const homeController = {
     },
     teste: async (req, res) => {
         const produtos = await Produto.findAll()
+        // ----- pegar um por um -----
+        // produtos.forEach(element => {
+        //     console.log(element.nome);
+        // });
         console.log(produtos)
         res.send("oi")
 

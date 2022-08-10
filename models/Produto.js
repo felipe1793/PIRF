@@ -3,8 +3,11 @@ module.exports = (sequelize, DataType) => {
         id:{
             type:DataType.INTEGER,
             primaryKey:true,
-            allowNull:false,
-            autoIncrement:true
+            allowNull:false
+        },
+        imagem:{
+            type:DataType.STRING,
+            allowNull: false
         },
         nome: DataType.STRING,
         preco: {
@@ -13,7 +16,7 @@ module.exports = (sequelize, DataType) => {
             },
         descricao: DataType.STRING
     }, {
-        tableName:"Produto01",
+        tableName:"Produto",
         timestamps:false
     })
 
