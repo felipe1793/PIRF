@@ -2,7 +2,7 @@ const user = {
     nome: null
 }
 
-const { Produto } = require('../models')
+const { Produto, Usuario } = require('../models')
 
 const homeController = {
     index: (req, res) => {
@@ -36,12 +36,33 @@ const homeController = {
     },
     teste: async (req, res) => {
         const produtos = await Produto.findAll()
+        // ----- Insert -----
+        // var usuarios = await Usuario.create({nome:"Leonardo", senha:"1234"})
+
+        // ----- Update -----
+        // await Usuario.update({nome: "Silmara"},{
+        //     where: {
+        //     id: 3
+        //     }
+        // });
+
+
+        // ----- Delete -----
+        // await Usuario.destroy({
+        //     where: {
+        //     id: 2
+        //     }
+        // });
+
+        var usuarios = await Usuario.findAll()
+
         // ----- pegar um por um -----
         // produtos.forEach(element => {
         //     console.log(element.nome);
         // });
+
         console.log(produtos)
-        res.send("oi")
+        res.send(usuarios)
 
     }
 }
