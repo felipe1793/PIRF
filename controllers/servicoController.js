@@ -2,6 +2,7 @@ const Servico = require('./servicos');
 const storage = require('../config/storage');
 const fs = require('fs');
 const path = require('path');
+const { Produto } = require("../models")
 const user = {
     nome: null
 }
@@ -9,24 +10,25 @@ const user = {
 const uploadAvatar = storage('avatar', '/servicos');
 
 const servicoController = {
-    index: (req,res) => {
-        const servicos = Servico.findAll();
-        // console.log(servicos);
+    index: async (req,res) => {
+        const servicos = await Produto.findAll();
         return res.render('adm/servicos', {servicos, user});
     },
-    show: (req, res) => {
+    show: async (req, res) => {
         const {id} = req.params;
-        const servico = Servico.findById(id);
-        if(!servico) {
+        const produtos = await Produto.findAll();
+        const produto = produtos.find(item => id == item.id);
+        console.log(produtos)
+        if(!produto) {
             return res.send(`Serviço não encontrado`);
         }
-        return res.render('adm/servicos/detalhes', {servico, user});
+        return res.render('adm/servicos/detalhes', {produto, user});
     },
     create: (req, res) => {
         return res.render('adm/servicos/cadastro', {user});
     },
     store: (req, res) => {
-        uploadAvatar(req, res, (err) => {
+        uploadAvatar(req, res, async function (err) {
             const { nome, preco, ativo, descricao } = req.body
             const servico = {
                 nome,
@@ -35,11 +37,13 @@ const servicoController = {
                 ativo: ativo == 'on' ? true : false,
                 descricao
             };
+            const produto = await Produto.create({nome:servico.nome, imagem:servico.imagem, ativo:servico.ativo, preco:servico.preco, descricao:servico.descricao})
             Servico.save(servico);
             return res.render('adm/servicos/cadastro', {user});
         });
-
+        
     },
+    // ------ aqui ------
     edit: (req, res) => {
         const {id} = req.params;
         const servico = Servico.findById(id);

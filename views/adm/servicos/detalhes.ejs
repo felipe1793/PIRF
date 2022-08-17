@@ -22,12 +22,12 @@
             <br>
             <a href="/adm/servicos" class="btn btn-primary mb-2" >Lista de roupas</a>
             <article>
-                <img class="thumb" src="<%= servico.imagem %>" alt="" >
+                <img class="thumb" src="<%= produto.imagem %>" alt="erro" >
                 <div class="info">
-                    <h2> <%= servico.nome %> </h2>
-                    <p> <%= servico.preco %> </p>
-                    <p> <%= servico.descricao %> </p>
-                    <a href="#" class="btn btn-primary" <%= servico.ativo ? '' : 'style=background:red' %> >Comprar</a>
+                    <h2> <%= produto.nome %> </h2>
+                    <p> <%= produto.preco %> </p>
+                    <p> <%= produto.descricao %> </p>
+                    <a href="#" class="btn btn-primary" <%= produto.ativo ? '' : 'style=background:red' %> >Comprar</a>
                 </div>
             </article>        
 

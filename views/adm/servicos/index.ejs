@@ -31,6 +31,7 @@
                         <th scope="col">Nome</th>
                         <th scope="col">Preço</th>
                         <th scope="col">Ativo</th>
+                        <th scope="col">Descrição</th>
                         <th scope="col">Ações</th>
                       </tr>
                     </thead>
@@ -42,6 +43,7 @@
                                 <td><%= servico.nome %></td>
                                 <td><%= servico.preco %></td>
                                 <td><%= servico.ativo ? "Habilitado" : "Desabilitado" %></td>
+                                <td><%= servico.descricao %></td>
                                 <td>
                                     <a href="/adm/servicos/<%= servico.id %>" type="button" class="btn btn-primary">Abrir</a>
                                     <a href="/adm/servicos/<%= servico.id %>/editar" type="button" class="btn btn-secondary">Editar</a>

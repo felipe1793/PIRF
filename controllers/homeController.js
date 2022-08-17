@@ -38,6 +38,7 @@ const homeController = {
         const produtos = await Produto.findAll()
         // ----- Insert -----
         // var usuarios = await Usuario.create({nome:"Leonardo", senha:"1234"})
+        // var usuarios = await Produto.create({nome:"Teste-1", imagem:"1234", ativo:false, preco:12.5, descricao:"teste de descricao"})
 
         // ----- Update -----
         // await Usuario.update({nome: "Silmara"},{
@@ -60,9 +61,8 @@ const homeController = {
         // produtos.forEach(element => {
         //     console.log(element.nome);
         // });
-
         console.log(produtos)
-        res.send(usuarios)
+        res.send(produtos)
 
     }
 }

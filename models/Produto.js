@@ -3,6 +3,7 @@ module.exports = (sequelize, DataType) => {
         id:{
             type:DataType.INTEGER,
             primaryKey:true,
+            autoIncrement: true,
             allowNull:false
         },
         imagem:{
@@ -14,6 +15,10 @@ module.exports = (sequelize, DataType) => {
             type:DataType.FLOAT,
             allowNull:false
             },
+        ativo: {
+            type: DataType.STRING,
+            allowNull: false
+        },
         descricao: DataType.STRING
     }, {
         tableName:"Produto",
