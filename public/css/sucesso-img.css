@@ -1,0 +1,33 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.conteiner {
+    color: azure;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+button {
+    background-color: #002e85;
+    color: azure;
+    border: none;
+    border-radius: 50%;
+    width: 74px;
+    height: 37px;
+}
+div {
+    margin-top: 7px;
+}
+
+body{
+    background-image: url(/img/22432.jpg);
+    background-size: cover;
+}

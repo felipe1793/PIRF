@@ -3,6 +3,8 @@ const storage = require('../config/storage');
 const fs = require('fs');
 const path = require('path');
 const { Produto } = require("../models")
+const produtos = require('./produtosDbController');
+const produtoDb = require('./produtosDbController');
 const user = {
     nome: null
 }
@@ -18,7 +20,6 @@ const servicoController = {
         const {id} = req.params;
         const produtos = await Produto.findAll();
         const produto = produtos.find(item => id == item.id);
-        console.log(produtos)
         if(!produto) {
             return res.send(`Serviço não encontrado`);
         }
@@ -31,6 +32,7 @@ const servicoController = {
         uploadAvatar(req, res, async function (err) {
             const { nome, preco, ativo, descricao } = req.body
             const servico = {
+                
                 nome,
                 imagem: '/img/servicos/' + req.file.filename,
                 preco,
@@ -39,40 +41,50 @@ const servicoController = {
             };
             const produto = await Produto.create({nome:servico.nome, imagem:servico.imagem, ativo:servico.ativo, preco:servico.preco, descricao:servico.descricao})
             Servico.save(servico);
-            return res.render('adm/servicos/cadastro', {user});
+            return res.render('adm/servicos/sucesso', {user, opcao: "cadastrado"});
         });
         
     },
-    // ------ aqui ------
-    edit: (req, res) => {
+    edit: async (req, res) => {
         const {id} = req.params;
-        const servico = Servico.findById(id);
-        if(!servico) {
-            return res.send(`Serviço não encontrado`);
-        }
-        return res.render('adm/servicos/editar', {servico, user});
+        // ----- antigo -----
+        // const servico = Servico.findById(id);
+        // if(!servico) {
+        //             return res.send(`Serviço não encontrado`);
+        //         }
+            const servico = await produtoDb.find(id)
+            if(!servico) {
+                return res.send(`Serviço não encontrado`);
+            }
+            return res.render('adm/servicos/editar', {servico, user});
+        },
+    update: async (req, res) => {
+        // const servicos = await Produto.findAll();
+        const {id} = req.params;
+        const {nome, preco, ativo, descricao} = req.body;
+        produtoDb.update(id, nome, preco, ativo, descricao)
+        return res.render('adm/servicos/sucesso', { user, opcao: "alterado"});
+        // ----- Antigo -----
+        // const servico = {
+        //     id,
+        //     imagem,
+        //     nome,
+        //     preco,
+                //     ativo: (ativo ? true : false),
+                //     descricao
+                //     };
+                // Servico.update(id, servico);
     },
-    update: (req, res) => {
+    destroy: async (req, res) => {
+        // ----- Antigo -----
+        // const servicos = Servico.findAll();
+        // const servico = Servico.findById(id);
         const {id} = req.params;
-        const { imagem,nome, preco, ativo, descricao} = req.body;
-        const servico = {
-            id,
-            imagem,
-            nome,
-            preco,
-            ativo: (ativo ? true : false),
-            descricao
-            };
-            Servico.update(id, servico);
-            return res.redirect(res.status(201),'/adm/servicos', {user});
-    },
-    destroy: (req, res) => {
-        const servicos = Servico.findAll();
-        const {id} = req.params;
-        const servico = Servico.findById(id);
-        if(!servico) {
-            return res.status(404).render('errors', {error: 'Servico não encontrado'});
-        }
+        // const servico = Servico.findById(id)
+        await produtoDb.destroy(id)
+        // if(!servico) {
+        //     return res.status(404).render('errors', {error: 'Servico não encontrado'});
+        // }
         
         Servico.delete(id);
         try {
@@ -80,7 +92,7 @@ const servicoController = {
         }catch (error){
             console.log(error);
         }
-        return res.render('adm/servicos', {servicos, user});
+        return res.render('adm/servicos/sucesso', {user, opcao: "deletado"});
     }
 };
 

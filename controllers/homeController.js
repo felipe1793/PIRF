@@ -3,6 +3,7 @@ const user = {
 }
 
 const { Produto, Usuario } = require('../models')
+const mvc = require('./produtosDbController')
 
 const homeController = {
     index: (req, res) => {
@@ -35,17 +36,19 @@ const homeController = {
         res.render("home/trabalheConosco", {user})
     },
     teste: async (req, res) => {
-        const produtos = await Produto.findAll()
+        const itens = await mvc.show()
+        const um = await mvc.find(10)
+        // const produtos = await Produto.findAll()
         // ----- Insert -----
         // var usuarios = await Usuario.create({nome:"Leonardo", senha:"1234"})
         // var usuarios = await Produto.create({nome:"Teste-1", imagem:"1234", ativo:false, preco:12.5, descricao:"teste de descricao"})
 
         // ----- Update -----
-        // await Usuario.update({nome: "Silmara"},{
+        // await Produto.update({nome: "Silmara"},{
         //     where: {
-        //     id: 3
+        //     id: 20
         //     }
-        // });
+        // }); 
 
 
         // ----- Delete -----
@@ -61,8 +64,11 @@ const homeController = {
         // produtos.forEach(element => {
         //     console.log(element.nome);
         // });
-        console.log(produtos)
-        res.send(produtos)
+        // console.log(produtos)
+        // await mvc.create("trem", "ntem", false, 0.25, "mais um teste")
+        // await mvc.update(20, "Yes", 55, true,"blewers")
+        // await mvc.destroy(9)
+        res.send(itens)
 
     }
 }

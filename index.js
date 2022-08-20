@@ -19,7 +19,7 @@ app.use(servicosRouter);
 
 
 app.use((req, res, next) => {
-    return res.status(404).render("errors", {error: "Página não encotrada"});
+    return res.status(404).render("errors", {opcao: "Página não encotrada"});
 })
 
 app.listen(3000, () => console.log("loading..."));
