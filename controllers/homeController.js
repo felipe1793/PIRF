@@ -3,11 +3,12 @@ const user = {
 }
 
 const { Produto, Usuario } = require('../models')
-const mvc = require('./produtosDbController')
+const produtosDb = require('./produtosDbController')
 
 const homeController = {
-    index: (req, res) => {
-        res.render("home/", {user})
+    index: async (req, res) => {
+        const produtos = await produtosDb.show()
+        res.render("home/", {user, produto: produtos, cont:0})
     },
     cadastro: (req, res) => {
         res.render("home/cadastro", {user})
@@ -36,8 +37,9 @@ const homeController = {
         res.render("home/trabalheConosco", {user})
     },
     teste: async (req, res) => {
-        const itens = await mvc.show()
-        const um = await mvc.find(10)
+        const itens = await produtosDb.show()
+        const {id} = req.params
+        const um = await produtosDb.find(id)
         // const produtos = await Produto.findAll()
         // ----- Insert -----
         // var usuarios = await Usuario.create({nome:"Leonardo", senha:"1234"})
@@ -68,7 +70,7 @@ const homeController = {
         // await mvc.create("trem", "ntem", false, 0.25, "mais um teste")
         // await mvc.update(20, "Yes", 55, true,"blewers")
         // await mvc.destroy(9)
-        res.send(itens)
+        res.send(um)
 
     }
 }

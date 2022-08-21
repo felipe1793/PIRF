@@ -33,58 +33,16 @@
             <section class="grupo1">
                 <div class="produtos">
 
-                    <div class="descricao">
-                        <img src="/img/index/Frente.webp" alt="Camisa Fluminense">
-                        <p id="camisa">Camisa Fluminense</p>
-                        <p id="preco">R$ 230,00</p>
-                    </div>
-
-
-                    <div class="descricao">
-                        <img src="/img/index/2I3-3672-054_zoom1.webp" alt="Camisa Palmeiras">
-                        <p id="camisa">Camisa Palmeiras</p>
-                        <p id="preco">R$ 250,00</p>
-                    </div>
-
-
-                    <div class="descricao">
-                        <img src="/img/index/NQQ-7755-068_zoom1.webp" alt="Camisa Flamengo">
-                        <p id="camisa">Camisa Flamengo</p>
-                        <p id="preco">R$ 270,00</p>
-                    </div>
-                    <div class="descricao">
-                        <img src="/img/index/Frente.webp" alt="Camisa Fluminense">
-                        <p id="camisa">Camisa Fluminense</p>
-                        <p id="preco">R$ 230,00</p>
-                    </div>
-
-                </div>
-                <div class="produtos">
-
-                    <div class="descricao">
-                        <img src="/img/index/Frente.webp" alt="Camisa Fluminense">
-                        <p id="camisa">Camisa Fluminense</p>
-                        <p id="preco">R$ 230,00</p>
-                    </div>
-
-
-                    <div class="descricao">
-                        <img src="/img/index/2I3-3672-054_zoom1.webp" alt="Camisa Palmeiras">
-                        <p id="camisa">Camisa Palmeiras</p>
-                        <p id="preco">R$ 250,00</p>
-                    </div>
-
-
-                    <div class="descricao">
-                        <img src="/img/index/NQQ-7755-068_zoom1.webp" alt="Camisa Flamengo">
-                        <p id="camisa">Camisa Flamengo</p>
-                        <p id="preco">R$ 270,00</p>
-                    </div>
-                    <div class="descricao">
-                        <img src="/img/index/Frente.webp" alt="Camisa Fluminense">
-                        <p id="camisa">Camisa Fluminense</p>
-                        <p id="preco">R$ 230,00</p>
-                    </div>
+                    <% produto.forEach(produtos => { %>
+                        <form action="/teste/<%= produtos.id %>" method="post">
+                            <div class="descricao">
+                                <img src= <%= produtos.imagem  %> alt= <%= produtos.descricao  %> name="imagem">
+                                <p name="nome" id="camisa"><%= produtos.nome  %> </p>
+                                <p name="preco" id="preco">R$ <%= produtos.preco  %>,00</p>
+                                <button>Comprar</button>
+                            </div>
+                        </form> 
+                        <% }) %> 
 
                 </div>
             </section>

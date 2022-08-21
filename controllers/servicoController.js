@@ -58,22 +58,22 @@ const servicoController = {
             }
             return res.render('adm/servicos/editar', {servico, user});
         },
-    update: async (req, res) => {
+    update: (req, res) => {
         // const servicos = await Produto.findAll();
-        const {id} = req.params;
-        const {nome, preco, ativo, descricao} = req.body;
-        produtoDb.update(id, nome, preco, ativo, descricao)
-        return res.render('adm/servicos/sucesso', { user, opcao: "alterado"});
+        const {id} = req.params
+        const {nome, preco, ativo, descricao} = req.body
+        produtoDb.update( id, nome, preco, ativo, descricao)
+        return res.render('adm/servicos/sucesso', { user, opcao: "alterado"})
         // ----- Antigo -----
         // const servico = {
-        //     id,
-        //     imagem,
-        //     nome,
-        //     preco,
-                //     ativo: (ativo ? true : false),
-                //     descricao
-                //     };
-                // Servico.update(id, servico);
+            //     id,
+            //     imagem,
+            //     nome,
+            //     preco,
+            //     ativo: (ativo ? true : false),
+            //     descricao
+            //     };
+            // Servico.update(id, servico);
     },
     destroy: async (req, res) => {
         // ----- Antigo -----

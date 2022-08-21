@@ -22,7 +22,7 @@
 
                 <a href="/adm/servicos" class="btn btn-primary mb-2" >Lista de roupas</a>
 
-                <form method="POST" enctype="multipart/form-data" action="/adm/servicos/<%= servico.id %>?_method=PUT" >
+                <form method="POST" action="/adm/servicos/<%= servico.id %>?_method=PUT" >
                     <div class="mb-3">
                       <label for="" class="form-label">Imagem</label>
                       <input type="file" name="imagem" class="form-control" >

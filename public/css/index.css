@@ -47,3 +47,8 @@ header {
     font-size: 20px;
     margin: 40px;
 }
+
+button {
+    margin-top: 5%;
+    border: none;
+}
