@@ -8,11 +8,13 @@
         </div>
         <% if (user.nome == null || user.nome == undefined) { %> 
             <div class="usuario">
+                <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                 <i class="fa fa-user"></i>
                 <a href="http://localhost:3000/"><p>Login</p></a>
             </div>
             <% } else { %> 
             <div class="usuario">
+                <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                 <i class="fa fa-user"></i>
                 <p>Olá, <%= user.nome  %> </p>
             </div>
