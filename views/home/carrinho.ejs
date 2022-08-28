@@ -15,76 +15,121 @@
 
     <%- include('../partials/header') %>
 
-        <main>
-           
-            <br>
-            <h1>Parabéns! você ganhou frete grátis pela K2 Sports</h1>
-
-            <section>
-                <div class="descricao">
-                    <img src="/img/index/NQQ-7755-068_zoom1.webp" alt="Camisa Flamengo">
-                        <p id="camisa">Camisa Flamengo</p>
-                        <p id="preco">R$ 270,00</p>
-                    </div>
-                 
-                <p>pra este cola l tem que vir a imgem com todos as informações do produto</p>
-                <br>
-                <br>
-                <h4>Vendido e entregue por K2 Sports</h4>
-                <br>
-                <h4>Tamanho: M</h4>
-            </section>
-            <br>
-            <article>
-                <br>
-                <h4>Quantidade - 1 +</h4>
-                <br>
-                <button>Ver mais produtos</button>
-                <br>
-                <br>
-                <h4>Simule frete e prazo de entrega</h4>
-                <br>
-                <label for="quantity">*CEP:</label>
-                <br>
-                <input type="number" id="quantity" name="quantity" min="1" max="10">
-                <br>
-                <br>
-                <button>Calcular</button>
-            </article>
-            <br>
-            <br>
-            <aside>
-                <p>Subtotal ( 1 Item ) R$449.00</p>
-                <br>
-                <br>
-               
-                <p>Frete     K2         grátis</p>
-               
-                <br>
-                <br>
-                <p>Cupom de desconto     adicionar</p>
-               
-                <br>
-                <br>
-                <p>Valor Total             R$449.00</p>
-                <br>
-                <br>
-                <p>Em até 8x sem juros</p>
-                
-                <br>
-                <br>
-                <button>FINALIZAR COMPRA</button>
-                <br>
-                <br>
-                <button>ESCOLHER MAIS PRODUTOS</button>
-                <br>
-                <br>
-                        <h5>COMPRA SEGURA</h5>
-            </aside>
-            <br>
+    <main>
+        <h1>Meu Carrinho</h1>
+        <section class="conteiner">
+            <% carrinho.forEach( produto => { %> 
             
-        </main>
+            <div class="img-produto">
+                <img src=<%= produto.imagem %> alt=<%= produto.imagem %>>
+            </div>
 
+            <div class="produto">
+                <div>
+                    <p>Descrição: <%= produto.descricao %></p>
+                </div>
+                <div class="mini-box">
+                    <div class="qtd-box">
+                        <label for="qtd">QTD:</label>
+                        <input type="number" name="qtd" placeholder=<%= produto.qtd %>>
+                    </div>
+                    <div class="valor-box">
+                        <p>Valor: <%= produto.preco %></p>
+                    </div>
+                </div>
+            </div>
+            <% }) %> 
+        </section>
+
+        <section class="conteiner-frete">
+            <form action="#" method="post">
+                <h3>
+                    Calcular frete e prazo
+                </h3>
+
+                <input type="text" placeholder="Destino">
+                <button type="submit"> OK</button>
+            </form>
+        </section>
+
+        <h2>
+            Resumo do pedido
+        </h2>
+
+        <section class="conteiner-resumo">
+
+            <div class="resumo-box">
+
+                <div class="mini-box-resumo">
+                    <div>
+                        Quantidade de produtos:
+                    </div>
+                    <div>
+                        Frete
+                    </div>
+                </div>
+
+                <div class="resumo-box-lateral-direita">
+                    <div>
+                        <%= total[1] %> 
+                    </div>
+                    <div>
+                        Em Breve
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p>Total: R$ <%= total[0] %> </p>
+        </section>
+
+        <section class="conteiner-btns">
+            <a href="#"> Continuar</a>
+            <a href="/index">adicionar mais produtos</a>
+        </section>
+
+        <section class="similares-box">
+
+            <div>
+                <div class="box-item">
+                    <img src="img/Boleto.png" alt="Falha ao carregar a imagem">
+                    <p>Descrição</p>
+                </div>
+                <div class="box-item">
+                    <img src="img/Boleto.png" alt="Falha ao carregar a imagem">
+                    <p>Descrição</p>
+                </div>
+            </div>
+            <div>
+                <div class="box-item">
+                    <img src="img/Boleto.png" alt="Falha ao carregar a imagem">
+                    <p>Descrição</p>
+                </div>
+                <div class="box-item">
+                    <img src="img/Boleto.png" alt="Falha ao carregar a imagem">
+                    <p>Descrição</p>
+                </div>
+            </div>
+            <div>
+                <div class="box-item" id="off">
+                    <img src="img/Boleto.png" alt="Falha ao carregar a imagem">
+                    <p>Descrição</p>
+                </div>
+                <div class="box-item" id="off">
+                    <img src="img/Boleto.png" alt="Falha ao carregar a imagem">
+                    <p>Descrição</p>
+                </div>
+            </div>
+
+            <div>
+                
+                <div class="box-item-ultimo" id="off">
+                    <img src="img/Boleto.png" alt="Falha ao carregar a imagem">
+                    <p>Descrição</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
         <%- include('../partials/footer') %>
 
 </body>

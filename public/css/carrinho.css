@@ -1,23 +1,417 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:ital@1&display=swap');
 
-
-* {
-    font-family: 'Roboto', sans-serif;
+*{
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.conteiner-btns a {
+    text-decoration: none;
+    background-color: #008000;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.conteiner-frete button{
+    background-color: #008000;
+    color: #fff;
+}
+
+.conteiner-frete input{
+    color: #000;
+
 }
 
 body {
-    min-width: 1280px;
+    background-color: #0f5132;
 }
-h1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-content: center;
-    padding: 9px 39px 9px 19px;
+
+main {
+    height: auto;
+}
+
+.qtd-box input{
+    width: 20%;
+    color: #000;
+}
+
+@media only screen and (max-width: 425px) {
+    h1 {
+        margin-bottom: 5%;
+    }
+
+    h2 {
+        margin: 2%;
+    }
+
+    hr {
+        margin: 1%;
+    }
+
+    .conteiner {
+        width: 96%;
+        max-width: 425px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0% 2%;
+    }
+
+    .img-produto {
+        width: 48%;
+        margin: 0% 1%;
+    }
     
+    .img-produto img {
+        width: 80%;
+        margin: 1% 10%;
+    }
+    
+    .produto {
+        width: 48%;
+        margin: 0% 1%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .produto div p {
+        font-size: 140%;
+    }
+
+    .mini-box {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .conteiner-frete {
+        width: 96%;
+        max-width: 425px;
+        height: 60px;
+        margin: 2%;
+    }
+
+    .conteiner-frete form input {
+        width: 62%;
+        margin-right: 2%;
+    }
+
+    .conteiner-resumo {
+        width: 96%;
+        max-width: 425px;
+        margin:  0% 2%;
+    }
+
+    .resumo-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .mini-box-resumo {
+        margin: 2% 0%;
+        line-height: 2;
+    }
+
+    .resumo-box-lateral-direita{
+        margin: 2% 0%;
+        line-height: 2;
+    }
+
+    .conteiner-btns{
+        width: 96%;
+        max-width: 425px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2%;
+        line-height: 2;
+    }
+
+    .similares-box {
+        width: 96%;
+        max-width: 425px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-left: 15%;
+    }
+
+    .box-item p {
+        text-align: center;
+    }
+
+    .box-item{
+        padding: 0% 8%;
+    }
+
+    #off{
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+    h1 {
+        margin: 5%;
+    }
+
+    h2 {
+        margin: 2%;
+    }
+
+    hr {
+        margin-right: 1%;
+    }
+
+    .conteiner {
+        width: 96%;
+        max-width: 768px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0% 2%;
+    }
+
+    .img-produto {
+        width: 48%;
+        margin: 0% 1%;
+    }
+
+    .img-produto img {
+        width: 50%;
+        margin: 1% 10%;
+    }
+
+    .produto {
+        width: 48%;
+        margin: 0% 1%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .produto div p {
+        font-size: 140%;
+    }
+
+    .mini-box {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .conteiner-frete {
+        width: 96%;
+        max-width: 768px;
+        height: 60px;
+        margin: 2%;
+    }
+
+    .conteiner-frete form input {
+        width: 62%;
+        margin-right: 2%;
+    }
+
+    .conteiner-frete form button {
+        width: 39px;
+        height: 20px;
+    }
+
+    .conteiner-resumo {
+        width: 96%;
+        max-width: 768px;
+        margin:  0% 2%;
+    }
+
+    .resumo-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .resumo-box-lateral-direita{
+        margin: 2% 15% 2% 0%;
+        line-height: 2;
+    }
+
+    .mini-box-resumo {
+        margin: 2% 0%;
+        line-height: 2;
+    }
+
+    .conteiner-btns{
+        width: 96%;
+        max-width: 768px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        margin: 2%;
+        line-height: 2;
+    }
+
+    .similares-box {
+        width: 96%;
+        max-width: 768px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .box-item p {
+        text-align: center;
+    }
+
+    .box-item-ultimo {
+        height: 100%;
+    }
+
+    .box-item-ultimo img {
+        width: 100%;
+        height: 85%;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    main {
+        margin: 0% 8%;
+        height: auto;
+    }
+
+    h1 {
+        margin: 5%;
+    }
+
+    h2 {
+        margin: 2%;
+    }
+
+    hr {
+        margin-right: 1%;
+    }
+
+    .conteiner {
+        width: 96%;
+        max-width: 1024px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0% 2%;
+    }
+
+    .img-produto {
+        width: 30%;
+        margin: 0% 1%;
+    }
+
+    .img-produto img {
+        width: 50%;
+        margin: 1% 10%;
+    }
+
+    .produto {
+        width: 48%;
+        margin: 0% 1%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .produto div p {
+        font-size: 140%;
+    }
+
+    .mini-box {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .conteiner-frete {
+        width: 96%;
+        max-width: 1024px;
+        height: 80px;
+        margin: 2%;
+    }
+
+    .conteiner-frete form input {
+        width: 62%;
+        height: 30px;
+        border: solid 1px;
+        margin-right: 2%;
+    }
+
+    .conteiner-frete form button {
+        width: 39px;
+        height: 30px;
+    }
+
+    .conteiner-resumo {
+        width: 96%;
+        max-width: 1024px;
+        margin:  0% 2%;
+    }
+
+    .resumo-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .resumo-box-lateral-direita{
+        margin: 2% 15% 2% 0%;
+        line-height: 2;
+    }
+
+    .mini-box-resumo {
+        margin: 2% 0%;
+        line-height: 2;
+    }
+
+    .conteiner-btns{
+        width: 96%;
+        max-width: 1024px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        margin: 2%;
+        line-height: 2;
+    }
+
+    .similares-box {
+        width: 96%;
+        max-width: 1024px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .box-item p {
+        text-align: center;
+    }
+
+    .box-item-ultimo {
+        height: 100%;
+    }
+
+    .box-item-ultimo img {
+        width: 100%;
+        height: 85%;
+    }
 }
 
 

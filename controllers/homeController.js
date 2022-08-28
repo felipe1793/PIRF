@@ -2,8 +2,9 @@ const user = {
     nome: null
 }
 
-const { Produto, Usuario } = require('../models')
+const { Produto, Usuario, Carrinho } = require('../models')
 const produtosDb = require('./produtosDbController')
+const carrinhoDb = require('./carrinhoDbController')
 
 const homeController = {
     index: async (req, res) => {
@@ -13,16 +14,20 @@ const homeController = {
     cadastro: (req, res) => {
         res.render("home/cadastro", {user})
     },
-    carrinho: (req, res) => {
-        res.render("home/carrinho", {user})
+    carrinho: async (req, res) => {
+        const precoTotal = await carrinhoDb.fullPrice()
+        const produtoTotal = await carrinhoDb.fullProducts()
+        const carrinho = await Carrinho.findAll()
+        res.render("home/carrinho", {user, carrinho: carrinho, total:[precoTotal, produtoTotal]})
     },
 
-    login: (req, res) => {
+    login: async (req, res) => {
         res.render("home/login", {user})
     },
-    logged: (req, res) => {
+    logged: async (req, res) => {
+        const produtos = await produtosDb.show()
         let {email, password} = req.body
-        res.redirect("/index")
+        res.redirect("/", 200, {user, produto: produtos})
     },
     minhaConta: (req, res) => {
         res.render("home/minhaConta", {user})
@@ -36,10 +41,14 @@ const homeController = {
     trabalheConosco: (req, res) => {
         res.render("home/trabalheConosco", {user})
     },
-    teste: async (req, res) => {
-        const itens = await produtosDb.show()
+    // ------ Aqui -----
+    envCarrinho: async (req, res) => {
         const {id} = req.params
-        const um = await produtosDb.find(id)
+    },
+    teste: async (req, res) => {
+        // const itens = await produtosDb.show()
+        // const {id} = req.params
+        // const um = await produtosDb.find(id)
         // const produtos = await Produto.findAll()
         // ----- Insert -----
         // var usuarios = await Usuario.create({nome:"Leonardo", senha:"1234"})
@@ -60,7 +69,8 @@ const homeController = {
         //     }
         // });
 
-        var usuarios = await Usuario.findAll()
+        // var usuarios = await Usuario.findAll()
+        // const carrinho = await Carrinho.findAll()
 
         // ----- pegar um por um -----
         // produtos.forEach(element => {
@@ -70,7 +80,8 @@ const homeController = {
         // await mvc.create("trem", "ntem", false, 0.25, "mais um teste")
         // await mvc.update(20, "Yes", 55, true,"blewers")
         // await mvc.destroy(9)
-        res.send(um)
+        // const a = await carrinhoDb.fullProducts()
+        res.send(`teste`)
 
     }
 }

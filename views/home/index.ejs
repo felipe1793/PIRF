@@ -34,7 +34,7 @@
                 <div class="produtos">
 
                     <% produto.forEach(produtos => { %>
-                        <form action="/teste/<%= produtos.id %>" method="post">
+                        <form action="/compra/<%= produtos.id %>" method="post">
                             <div class="descricao">
                                 <img src= <%= produtos.imagem  %> alt= <%= produtos.descricao  %> name="imagem">
                                 <p name="nome" id="camisa"><%= produtos.nome  %> </p>
