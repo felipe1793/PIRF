@@ -34,13 +34,15 @@
                 <div class="produtos">
 
                     <% produto.forEach(produtos => { %>
-                        <form action="/compra/<%= produtos.id %>" method="post">
-                            <div class="descricao">
-                                <img src= <%= produtos.imagem  %> alt= <%= produtos.descricao  %> name="imagem">
-                                <p name="nome" id="camisa"><%= produtos.nome  %> </p>
-                                <p name="preco" id="preco">R$ <%= produtos.preco  %>,00</p>
-                                <button>Comprar</button>
-                            </div>
+                        <form action="/compra/<%= produtos.id %>" method="get">
+                            <a href="/compra/<%= produtos.id %>">
+                                <div class="descricao">
+                                    <img src= <%= produtos.imagem  %> alt= <%= produtos.descricao  %> name="imagem">
+                                    <p name="nome" id="camisa"><%= produtos.nome  %> </p>
+                                    <p name="preco" id="preco">R$ <%= produtos.preco  %>,00</p>
+                                    <button>Comprar</button>
+                                </div>
+                            </a>
                         </form> 
                         <% }) %> 
 

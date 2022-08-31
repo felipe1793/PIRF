@@ -130,7 +130,7 @@ main {
     margin-bottom: 100px;
     border: solid;
     border-width: thin;
-    border-color: lightgray;
+    border-color: #130b63;
     border-style: outset;
     padding-bottom: 12px;
 }
@@ -140,11 +140,11 @@ img {
 }
 
 .descricao {
-    background: #81b0f5;
+    background: rgb(19, 11, 99);
 }
 
 #camisa {
-    color: black;
+    color: #fff;
     font-size: 16px;
     padding-top: 12px;
     margin-left: 4px;
@@ -153,7 +153,7 @@ img {
 #preco {
     font-weight: bold;
     font-size: 15px;
-    color: black;
+    color: #fff;
     position: relative;
     bottom: -5px;
     margin-left: 4px;

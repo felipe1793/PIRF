@@ -12,7 +12,8 @@ router.get('/politica', homeController.politica);
 router.get('/sobre', homeController.sobre);
 router.get('/trabalheConosco', homeController.trabalheConosco);
 router.get('/teste', homeController.teste)
-router.post('/compra:id', homeController.envCarrinho);
+router.get('/compra/:id', homeController.produto);
+router.post('/compra/:id', homeController.envCarrinho)
 
 
 

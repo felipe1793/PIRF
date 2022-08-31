@@ -41,9 +41,15 @@ const homeController = {
     trabalheConosco: (req, res) => {
         res.render("home/trabalheConosco", {user})
     },
-    // ------ Aqui -----
+    produto: async (req, res) => {
+        const {id} = req.params
+        const produto = await produtosDb.find(id)
+        res.render("home/produto", {user, produto: produto})
+    },
+    // ----- Aqui -----
     envCarrinho: async (req, res) => {
         const {id} = req.params
+        res.send(`${id}`)
     },
     teste: async (req, res) => {
         // const itens = await produtosDb.show()

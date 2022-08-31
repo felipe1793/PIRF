@@ -37,7 +37,7 @@ header {
     margin-bottom: 100px;
     border: solid;
     border-width: thin;
-    border-color: lightgray;
+    border-color: #130b63;
     border-style: outset;
     padding-bottom: 12px;
 }
@@ -48,7 +48,8 @@ header {
     margin: 40px;
 }
 
-button {
+.descricao button {
     margin-top: 5%;
     border: none;
+    color: #fff;
 }

@@ -6,7 +6,6 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
-    color: #fff;
 }
 
 .conteiner-btns a {
@@ -28,6 +27,7 @@
 
 body {
     background-color: #0f5132;
+    color: #fff;
 }
 
 main {
