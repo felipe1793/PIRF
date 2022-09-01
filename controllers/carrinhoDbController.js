@@ -13,6 +13,23 @@ const carrinhoController = {
         const produtos = await Carrinho.findAll()
         produtos.forEach(element => products += element.qtd);
         return products
+    },
+    create: async (nome, preco, descricao, imagem, qtd, hora) => {
+        return await Carrinho.create({
+            nome_produto: nome,
+            preco: preco,
+            descricao: descricao,
+            imagem: imagem,
+            qtd: qtd,
+            hora: hora
+        })
+    },
+    destroy: async (id) => {
+        return await Carrinho.destroy({
+            where: {
+            id: id
+            }
+        });
     }
 } 
 

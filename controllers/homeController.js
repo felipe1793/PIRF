@@ -48,8 +48,11 @@ const homeController = {
     },
     // ----- Aqui -----
     envCarrinho: async (req, res) => {
+        const produtos = await produtosDb.show()
         const {id} = req.params
-        res.send(`${id}`)
+        const produto = await produtosDb.find(id)
+        await carrinhoDb.create(produto.nome, produto.preco, produto.descricao, produto.imagem, 1, produto.hora)
+        res.render("home/", {user, produto: produtos})
     },
     teste: async (req, res) => {
         // const itens = await produtosDb.show()
@@ -87,7 +90,9 @@ const homeController = {
         // await mvc.update(20, "Yes", 55, true,"blewers")
         // await mvc.destroy(9)
         // const a = await carrinhoDb.fullProducts()
-        res.send(`teste`)
+        // await carrinhoDb.destroy(1)
+        const b  = await Carrinho.findAll()
+        res.send(b)
 
     }
 }

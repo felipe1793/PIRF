@@ -22,12 +22,8 @@ module.exports = (sequelize, DataType) => {
             type: DataType.STRING,
             allowNull: false
         },
-        qtd: {
-            type: DataType.INTEGER,
-            allowNull: false
-        },
-        create_time: DataType.DATE,
-        update_time: DataType.DATE
+        qtd: DataType.INTEGER,
+        hora: DataType.STRING
     }, {
         tableName:"carrinho",
         timestamps:false
