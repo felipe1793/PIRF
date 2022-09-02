@@ -5,7 +5,7 @@ const carrinhoController = {
     fullPrice: async () => {
         var price = 0
         const produtos = await Carrinho.findAll()
-        produtos.forEach(element => price += element.preco);
+        produtos.forEach(element => {price += element.preco * element.qtd});
         return price
     },
     fullProducts: async () => {
@@ -13,6 +13,10 @@ const carrinhoController = {
         const produtos = await Carrinho.findAll()
         produtos.forEach(element => products += element.qtd);
         return products
+    },
+    show: async (req, res) => {
+        const produtos = await Carrinho.findAll()
+        return produtos
     },
     create: async (nome, preco, descricao, imagem, qtd, hora) => {
         return await Carrinho.create({

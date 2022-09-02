@@ -13,7 +13,8 @@ router.get('/sobre', homeController.sobre);
 router.get('/trabalheConosco', homeController.trabalheConosco);
 router.get('/teste', homeController.teste)
 router.get('/compra/:id', homeController.produto);
-router.post('/compra/:id', homeController.envCarrinho)
+router.post('/compra/:id', homeController.envCarrinho);
+router.post('/compraFinalizada', homeController.compraFinalizada);
 
 
 

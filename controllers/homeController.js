@@ -54,6 +54,16 @@ const homeController = {
         await carrinhoDb.create(produto.nome, produto.preco, produto.descricao, produto.imagem, 1, produto.hora)
         res.render("home/", {user, produto: produtos})
     },
+    compraFinalizada: async (req, res) => {
+        const date = new Date().toLocaleTimeString();
+        const carrinho = await carrinhoDb.show()
+        const precoTotal = await carrinhoDb.fullPrice()
+        const produtoTotal = await carrinhoDb.fullProducts()
+        res.render("home/compraFinalizada", {user, total:[precoTotal, produtoTotal], carrinho: carrinho, hora:date})
+        carrinho.forEach(element => {
+            carrinhoDb.destroy(element.id)
+        });
+    },
     teste: async (req, res) => {
         // const itens = await produtosDb.show()
         // const {id} = req.params
@@ -90,7 +100,7 @@ const homeController = {
         // await mvc.update(20, "Yes", 55, true,"blewers")
         // await mvc.destroy(9)
         // const a = await carrinhoDb.fullProducts()
-        // await carrinhoDb.destroy(1)
+        await carrinhoDb.destroy(3)
         const b  = await Carrinho.findAll()
         res.send(b)
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="Pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/carrinho.css">
+    <title>Compra Finalizada</title>
+</head>
+<body>
+    <!-- Adcionar:
+    heigh-minimum: 100vh
+    flex-direction: colunm  -->
+    <%- include('../partials/header') %>
+
+    <h1>
+        Resumo do pedido
+    </h1>
+
+    <section class="conteiner">
+        <% carrinho.forEach( produto => { %> 
+
+        <div class="produto">
+            <div>
+                <p>Descrição: <%= produto.descricao %></p>
+            </div>
+            <div class="mini-box">
+                <div class="qtd-box">
+                    <p>Quantidade: <%= produto.qtd %> </p>
+                </div>
+                <div class="valor-box">
+                    <p>Valor: <%= produto.preco %></p>
+                </div>
+            </div>
+        </div>
+        <% }) %> 
+    </section>
+
+    <section class="conteiner-resumo">
+
+        <div class="resumo-box">
+
+            <div class="mini-box-resumo">
+                <div>
+                    Quantidade de produtos:
+                </div>
+                <div>
+                    Frete
+                </div>
+            </div>
+
+            <div class="resumo-box-lateral-direita">
+                <div>
+                    <%= total[1] %> 
+                </div>
+                <div>
+                    Em Breve
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p>Total: R$ <%= total[0] %> </p>
+        <p><%= hora %> </p>
+    </section>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>
