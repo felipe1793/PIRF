@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
+const session = require('express-session')
+var cookieParser = require('cookie-parser')
 
 const homeRouter = require("./routes/home");
 const servicosRouter = require('./routes/servicos');
@@ -13,8 +15,13 @@ app.set('view engine', 'ejs');
 app.set('views', './views'); // padrão o express já configura a pasta views
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(session( {
+    secret: 'segredo',
+    resave: true,
+    saveUninitialized: true,
+    cookie: { secure: true }}));
 app.use(homeRouter);
-
 app.use(servicosRouter);
 
 

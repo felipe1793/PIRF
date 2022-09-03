@@ -7,7 +7,8 @@ module.exports = (sequelize, DataType) => {
             allowNull:false
         },
         nome: DataType.STRING,
-        senha: DataType.STRING
+        senha: DataType.STRING,
+        email: DataType.STRING
     }, {
         tableName:"usuario",
         timestamps:false

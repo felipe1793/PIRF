@@ -1,7 +1,7 @@
-const user = {
+var user = {
     nome: null
-}
-
+} 
+const bCrypt = require('bcrypt')
 const { Produto, Usuario, Carrinho } = require('../models')
 const produtosDb = require('./produtosDbController')
 const carrinhoDb = require('./carrinhoDbController')
@@ -24,10 +24,25 @@ const homeController = {
     login: async (req, res) => {
         res.render("home/login", {user})
     },
-    logged: async (req, res) => {
-        const produtos = await produtosDb.show()
-        let {email, password} = req.body
-        res.redirect("/", 200, {user, produto: produtos})
+    logIn: async (req, res) => {
+        const usuarios = await Usuario.findAll()
+        const {email, password} = req.body
+        const usuario = usuarios.find(item => item.email == email)
+
+        if (!usuario || password != usuario.senha ) {
+            return res.status(400).json({ mensagem: "Email ou senha estão incorretos ou não existem!" });
+        }
+
+        res.cookie('usuario', usuario.email, {maxAge:900})
+        
+        res.redirect('/')
+    },
+    register: async (req, res) => {
+        const usuario = await Usuario.findAll()
+        const {email, password, confirmPassword, nome} = req.body
+        const hash = bCrypt.hashSync(password, 10)
+        await Usuario.create({nome: nome, senha: hash, email: email})
+        
     },
     minhaConta: (req, res) => {
         res.render("home/minhaConta", {user})
@@ -46,7 +61,6 @@ const homeController = {
         const produto = await produtosDb.find(id)
         res.render("home/produto", {user, produto: produto})
     },
-    // ----- Aqui -----
     envCarrinho: async (req, res) => {
         const produtos = await produtosDb.show()
         const {id} = req.params
@@ -101,7 +115,7 @@ const homeController = {
         // await mvc.destroy(9)
         // const a = await carrinhoDb.fullProducts()
         await carrinhoDb.destroy(3)
-        const b  = await Carrinho.findAll()
+        const b  = await Usuario.findAll()
         res.send(b)
 
     }
