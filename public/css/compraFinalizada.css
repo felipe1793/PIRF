@@ -39,6 +39,16 @@ main {
     color: #000;
 }
 
+.resumo-box {
+    height: 50vh;
+    margin-left: 4%;
+}
+
+.hora {
+    display: flex;
+    justify-content: space-between;
+}
+
 @media only screen and (max-width: 425px) {
     h1 {
         margin-bottom: 5%;
@@ -46,10 +56,6 @@ main {
 
     h2 {
         margin: 2%;
-    }
-
-    hr {
-        margin: 1%;
     }
 
     .conteiner {
@@ -168,10 +174,6 @@ main {
         margin: 2%;
     }
 
-    hr {
-        margin-right: 1%;
-    }
-
     .conteiner {
         width: 96%;
         max-width: 768px;
@@ -180,7 +182,6 @@ main {
         flex-wrap: wrap;
         justify-content: space-between;
         margin: 0% 2%;
-        border: 1px solid #fff;
     }
 
     .img-produto {
@@ -298,10 +299,6 @@ main {
         margin: 2%;
     }
 
-    hr {
-        margin-right: 1%;
-    }
-
     .conteiner {
         width: 96%;
         max-width: 1024px;
@@ -310,7 +307,6 @@ main {
         flex-wrap: wrap;
         justify-content: space-between;
         margin: 0% 2%;
-        border: 1px solid #fff;
     }
 
     .img-produto {
@@ -415,5 +411,3 @@ main {
         height: 85%;
     }
 }
-
-

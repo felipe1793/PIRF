@@ -6,7 +6,7 @@
             <input type type="text" id="buscar" name="buscar" class="buscar" placeholder="O que você procura?">
             <button class='button' id="button"><i class="fa fa-search"></i></button>
         </div>
-        <% if (user.nome == null || user.nome == undefined) { %> 
+        <% if (user.usuario == null || user.usuario == undefined) { %> 
             <div class="usuario">
                 <a href="/carrinho"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                 <i class="fa fa-user"></i>
@@ -14,9 +14,10 @@
             </div>
             <% } else { %> 
             <div class="usuario">
-                <a href="/carrinho"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                <i class="fa fa-user"></i>
-                <p>Olá, <%= user.nome  %> </p>
+                <!-- <i class="fa fa-user"></i> -->
+                <p>Olá, <%= user.usuario  %> </p>
+                <a href="/carrinho" class="espaco"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <a href="/logout">Sair</a>
             </div>
         <% } %> 
     </nav>

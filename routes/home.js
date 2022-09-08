@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const homeController = require('../controllers/homeController')
+const middleware = require('../Middleware/cookie')
 
 router.get('/', homeController.index)
 router.post('/register', homeController.register)
